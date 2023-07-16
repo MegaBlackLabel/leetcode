@@ -17,4 +17,10 @@ user.json ファイルを作成する
 }
 ```
 
+保存先については
+Leetcode: Workspace Folder
+を
+/workspaces/[リポジトリ名]にする
+
+
 たまに更新されるのでそのたびにsessionIdを更新する
