@@ -1,0 +1,28 @@
+#
+# @lc app=leetcode id=1351 lang=python3
+#
+# [1351] Count Negative Numbers in a Sorted Matrix
+#
+
+# @lc code=start
+from typing import List
+
+
+class Solution:
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        m = len(grid)
+        n = len(grid[0])
+        ans = 0
+        i = m - 1
+        j = 0
+
+        while i >= 0 and j < n:
+            if grid[i][j] < 0:
+                ans += n - j
+                i -= 1
+            else:
+                j += 1
+
+        return ans
+# @lc code=end
+
