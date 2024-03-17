@@ -1,0 +1,19 @@
+#
+# @lc app=leetcode id=1952 lang=python3
+#
+# [1952] Three Divisors
+#
+
+# @lc code=start
+import math
+
+
+class Solution:
+    def isThree(self, n: int) -> bool:
+        if n == 1:
+            return False
+
+        root = int(math.sqrt(n)) 
+        return root**2 == n and  all(root % i != 0 for i in range(2, int(math.sqrt(root)) + 1))
+# @lc code=end
+
