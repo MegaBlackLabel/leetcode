@@ -1,0 +1,32 @@
+#
+# @lc app=leetcode id=978 lang=python3
+#
+# [978] Longest Turbulent Subarray
+#
+
+# @lc code=start
+from typing import List
+
+
+class Solution:
+    def maxTurbulenceSize(self, arr: List[int]) -> int:
+        
+        ans = 1
+        increasing = 1
+        decreasing = 1
+
+        for i in range(1, len(arr)):
+            if arr[i] > arr[i - 1]:
+                increasing = decreasing + 1
+                decreasing = 1
+            elif arr[i] < arr[i - 1]:
+                decreasing = increasing + 1
+                increasing = 1
+            else:
+                increasing = 1
+                decreasing = 1
+            ans = max(ans, max(increasing, decreasing))
+
+        return ans
+# @lc code=end
+
